@@ -70,14 +70,15 @@ map("n", "<leader>d",
       if #listed > 1 then
         if to_close ~= target_previous and
           is_good_buffer(target_previous) then
-            vim.cmd("b #")
+            vim.cmd("buffer " .. target_previous)
             vim.api.nvim_buf_delete(to_close, {})
 
             return true
         end
 
-        -- focus the last listed buffer before we close this buffer so we dont close the buffer window 
-        vim.cmd("buffer " .. listed[#listed])
+        -- we got a bad buffer (ie its not listed)
+        -- so focus the last listed buffer before we close this buffer so we dont close the buffer window 
+        vim.cmd("buffer " .. listed[#listed - 1])
       end
 
       vim.cmd("NvimTreeFocus")

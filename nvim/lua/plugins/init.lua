@@ -92,7 +92,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
-   opts = {
+    opts = {
       ensure_installed = {
         "tsx",
         "typescript",

@@ -12,7 +12,7 @@ M.base46 = {
 		Visual = { bg = "#9e9e9e", fg = "#ffffff" },
     LineNr = { fg = "#949494" },
 
-    TelescopeMatching = { bg = "#9e9e9e", fg = "#ff7070" },
+    TelescopeMatching = { bg = "#949494", fg = "#ff7070" },
     TelescopeSelection = { link = "Visual" },
     TelescopeBorder = { link = "Visual" },
     TelescopeResultsTitle = { link = "Visual" },
