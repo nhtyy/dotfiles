@@ -16,7 +16,7 @@ local close_all_saved_bufs = function()
 
     for _, buf in ipairs(buffers) do
       -- Only close the buffer if it is loaded and not modified
-      if not vim.bo[buf].modified then
+      if not vim.bo[buf].modified and vim.api.nvim_get_option_value("buflisted", { buf = buf }) then
         -- Close the buffer
         vim.api.nvim_buf_delete(buf, {})
       end
