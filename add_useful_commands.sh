@@ -20,4 +20,5 @@ mkdir -p $HOME/.nhtyy-helpers/bin
 cp -r shell/helpers/* $HOME/.nhtyy-helpers/bin
 
 echo "Amending PATH to include $HOME/.nhtyy-helpers/bin"
+echo "You must run 'source $RC_FILE' to apply the changes"
 echo "export PATH=$HOME/.nhtyy-helpers/bin:$PATH" >> $RC_FILE
