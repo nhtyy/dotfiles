@@ -1,0 +1,16 @@
+useenv () {
+        local file="$1" 
+        if [[ ! -f "$file" ]]
+        then
+                echo "File not found: $(pwd)/$file"
+                return 1
+        fi
+        while IFS='=' read -r key value || [[ -n $key ]]
+        do
+                [[ -z "$key" || "$key" =~ ^# ]] && continue
+                export "$key=$value"
+                echo "Exported: $key"
+        done < "$file"
+}
+
+useenv "$1"
