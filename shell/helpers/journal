@@ -1,5 +1,5 @@
 journal() {
-    journalctl -u "$1" -f --output cat
+    journalctl -u "$1" -f --output cat "$2"
 }
 
-journal "$1"
+journal "$1" "$2"
