@@ -6,7 +6,7 @@ if [ $# -eq 0 ]; then
 fi
 
 args=()
-for arg in "$@";
+for arg in "$@"; do
   args+=(':(exclude)$arg')
 done
 
