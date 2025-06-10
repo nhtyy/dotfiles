@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+  echo "Usage: diffbut <pattern>"
+  exit 1
+fi
+
+args=()
+for arg in "$@";
+  args+=(':(exclude)$arg')
+done
+
+git diff -- "${args[@]}"
