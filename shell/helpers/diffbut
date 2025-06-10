@@ -1,13 +1,14 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
+  echo "diffbut: `git diff` but for excluding files"
   echo "Usage: diffbut <pattern>"
   exit 1
 fi
 
 args=()
 for arg in "$@"; do
-  args+=(':(exclude)$arg')
+  args+=(":(exclude)$arg")
 done
 
 git diff -- "${args[@]}"
