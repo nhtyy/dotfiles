@@ -1,3 +1,5 @@
+#!/bin/bash
+
 useenv () {
         local file="$1" 
         if [[ ! -f "$file" ]]
